@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="portstyle.css">
+</head>
+<body>
+
+  <header>
+    <h2 class="logo-text">ARYS GRAPHICS</h2>
+    <h1>PORTFOLIO</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p class="typewriter" data-text="👋 Hi, I'm Aryan — the creative mind behind ARYS GRAPHICS. With 1+ year of experience and 30+ happy clients, I specialize in crafting eye-catching designs, posters, and social media creatives that help brands grow and get noticed. I don’t just design — I solve problems visually. 💡 Whether you need a powerful brand identity or scroll-stopping Instagram posts, I bring creativity and strategy together. 🎯 Work with me to get: Unique and customized designs in cheaper price, Fast delivery and clear communication, 100% satisfaction and impactful visuals Let’s build something amazing together. 📩 Reach out and let’s get started!">
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>My Projects</h2>
+
+    <h3 class="section-title">Social Media Posts</h3>
+    <div class="social-grid">
+      <div class="project-card"><img src="pizza social media post 5.png" alt="restaurant1 post" onclick="openModal(this)"></div>
+      <div class="project-card"><img src="gym post 11.png" alt="restaurant2 post" onclick="openModal(this)"></div>
+      <div class="project-card"><img src="momos insta  post 3.jpg" alt="restaurant3 post" onclick="openModal(this)"></div>
+      <div class="project-card"><img src="burger post 1.png" alt="restaurant4 post" onclick="openModal(this)"></div>
+      <div class="project-card"><img src="_ insta navratri post 2.jpg" alt="Festival1 post" onclick="openModal(this)"></div>
+      <div class="project-card"><img src="hustle gym poster 3.png" alt="Festival2 post" onclick="openModal(this)"></div>
+      <div class="project-card"><img src="lib eid  post 1.jpg" alt="Festival3 post" onclick="openModal(this)"></div>
+      <div class="project-card"><img src="mahashivratri cap post 1.png" alt="Festival4 post" onclick="openModal(this)"></div>
+      <div class="project-card"><img src="COFFEE insta post 2.png" alt="gym1 post" onclick="openModal(this)"></div>
+      <div class="project-card"><img src="gym post 09.png" alt="gym2 post" onclick="openModal(this)"></div>
+      <div class="project-card"><img src="christmas page 2.jpg" alt="gym3 post" onclick="openModal(this)"></div>
+      <div class="project-card"><img src="gym motivation template 1.jpg" alt="gym4 post" onclick="openModal(this)"></div>
+    </div>
+
+    <h3 class="section-title">Posters</h3>
+    <div class="poster-grid">
+      <div class="project-card"><img src="_choco ice cream 1.jpg" alt="poster1" onclick="openModal(this)"></div>
+      <div class="project-card"><img src="vk new poster 1.png" alt="poster2" onclick="openModal(this)"></div>
+      <div class="project-card"><img src="MESSI design new 4.png" alt="poster3" onclick="openModal(this)"></div>
+      <div class="project-card"><img src="Shoes poster 1.jpg" alt="poster4" onclick="openModal(this)"></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h1 class="contact-heading">Contact Me</h1>
+    <p><i class="fas fa-envelope"></i> Email: aryansonkar03289@gmail.com</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/_arys_02?igsh=bzM3N3ZrYWV1c3Vm" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      <a href="https://www.linkedin.com/in/aryan-sonkar-b2baa42b2" target="_blank">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 ARYS GRAPHICS</p>
+  </footer>
+
+  <div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+
+  <script>
+    function openModal(img) {
+      document.getElementById("modalImage").src = img.src;
+      document.getElementById("imageModal").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("imageModal").style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById("imageModal");
+      if (event.target === modal) {
+        closeModal();
+      }
+    };
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const typewriters = document.querySelectorAll(".typewriter");
+
+      typewriters.forEach(el => {
+        let text = el.getAttribute("data-text");
+        let i = 0;
+
+        function type() {
+          if (i < text.length) {
+            el.textContent += text.charAt(i);
+            i++;
+            setTimeout(type, 30);
+          }
+        }
+
+        type();
+      });
+    });
+  </script>
+
+</body>
+</html>
